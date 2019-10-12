@@ -2,8 +2,14 @@
 A utility to return the date of the first, second, third, fourth, 
 or fifth day (monday, tues, ... etc.) of a given month and year.
 
-The API is intended to flow in the order a human would read it. For 
-example, we might ask for the date of the first Monday in December 2020.
+This could be used within a scheduling library or otherwise place 
+where a user might need to find dates for phrases like "find the 
+date of first monday of next month"
+
+Abstracting the 'human readable' concept to a more general usage, 
+the API is built to enable users to ask the more general question
+of getting the date from an ordinal request.  For example we might 
+ask for the date of the first Monday in December 2020.
 
 To enable this I created the primary api as follows...
 
