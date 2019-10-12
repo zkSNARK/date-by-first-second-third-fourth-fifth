@@ -29,9 +29,12 @@ month / year and the data parameters, the month / year will override
 the date parameter and the date parameter will be ignored. 
     
 As an example, if you would like to get the second tuesday in January
-of 2020, you can call the function as follows. 
+of 2020, you can call the function as follows... (all three are the 
+same)
 
-    date = get_date_of(ordinal.THIRD, calendar.MONDAY, 0, 0)
+
+
+    date = get_date_of(ordinal.THIRD, calendar.MONDAY, 1, 0)
     
 or
     
