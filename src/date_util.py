@@ -3,19 +3,13 @@ import datetime
 
 from typing import Optional
 
-from src.ordinal import Ordinal
 
-
-def get_date_of(ordinal=Ordinal.FIRST,
-                day=calendar.MONDAY,
-                date=None,
-                month=None,
-                year=None) -> Optional[datetime.date]:
+def get_date_of(ordinal=None, day=None, month=None, year=None, date=None) -> Optional[datetime.date]:
     """Get the date of a day of the week specified by an ordinal value (or int).
 
     As an example, you can read the API of this utility as follows.
 
-    get_date_of ( the first monday in January of 2021)
+        data = get_date_of ( the first monday in January of 2021)
 
     Expects monday to be set to the calendar library default firstweekday == 0.
     Check your first day by calling calendar.firstweekday().  See...
@@ -36,7 +30,7 @@ def get_date_of(ordinal=Ordinal.FIRST,
     :return: date or None if the request doesn't exist in the given month / year
     """
 
-    if month and year:
+    if month is not None and year is not None:
         date = datetime.date(year=year, month=month, day=1)
 
     month_range = calendar.monthrange(date.year, date.month)

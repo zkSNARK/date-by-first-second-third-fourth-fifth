@@ -2,7 +2,8 @@ import calendar
 import datetime
 from unittest import TestCase
 
-from src.date_util import get_date_of, Ordinal
+from ordinal import ordinal, month
+from src.date_util import get_date_of
 
 
 class GetSundayDateOffset(TestCase):
@@ -31,162 +32,162 @@ class GetSundayDateOffset(TestCase):
     fifth_sundays_2022 = [30, None, None, None, 29, None, 31, None, None, 30, None, None]
 
     def test_first_sundays_2019(self):
-        for i in range(1, 13):
-            seed_date = datetime.date(year=2019, month=i, day=1)
-            date_of_first_sun = get_date_of(ordinal=Ordinal.FIRST, day=calendar.SUNDAY, date=seed_date)
-            d2 = self.first_sundays_2019[i - 1]
+        for m in month:
+            seed_date = datetime.date(year=2019, month=m, day=1)
+            date_of_first_sun = get_date_of(ordinal=ordinal.FIRST, day=calendar.SUNDAY, date=seed_date)
+            d2 = self.first_sundays_2019[m - 1]
             d1 = date_of_first_sun.day
             self.assertEqual(d1, d2)
 
     def test_second_sundays_2019(self):
-        for i in range(1, 13):
-            seed_date = datetime.date(year=2019, month=i, day=1)
-            date_of_second_sun = get_date_of(ordinal=Ordinal.SECOND, day=calendar.SUNDAY, date=seed_date)
-            d2 = self.second_sundays_2019[i - 1]
+        for m in month:
+            seed_date = datetime.date(year=2019, month=m, day=1)
+            date_of_second_sun = get_date_of(ordinal=ordinal.SECOND, day=calendar.SUNDAY, date=seed_date)
+            d2 = self.second_sundays_2019[m - 1]
             d1 = date_of_second_sun.day
             self.assertEqual(d1, d2)
 
     def test_third_sundays_2019(self):
-        for i in range(1, 13):
-            seed_date = datetime.date(year=2019, month=i, day=1)
-            date_of_third_sun = get_date_of(ordinal=Ordinal.THIRD, day=calendar.SUNDAY, date=seed_date)
-            d2 = self.third_sundays_2019[i - 1]
+        for m in month:
+            seed_date = datetime.date(year=2019, month=m, day=1)
+            date_of_third_sun = get_date_of(ordinal=ordinal.THIRD, day=calendar.SUNDAY, date=seed_date)
+            d2 = self.third_sundays_2019[m - 1]
             d1 = date_of_third_sun.day
             self.assertEqual(d1, d2)
 
     def test_fourth_sundays_2019(self):
-        for i in range(1, 13):
-            seed_date = datetime.date(year=2019, month=i, day=1)
-            date_of_fourth_sun = get_date_of(ordinal=Ordinal.FOURTH, day=calendar.SUNDAY, date=seed_date)
-            d2 = self.fourth_sundays_2019[i - 1]
+        for m in month:
+            seed_date = datetime.date(year=2019, month=m, day=1)
+            date_of_fourth_sun = get_date_of(ordinal=ordinal.FOURTH, day=calendar.SUNDAY, date=seed_date)
+            d2 = self.fourth_sundays_2019[m - 1]
             d1 = date_of_fourth_sun.day
             self.assertEqual(d1, d2)
 
     def test_fifth_sundays_2019(self):
-        for i in range(1, 13):
-            seed_date = datetime.date(year=2019, month=i, day=1)
-            d2 = get_date_of(ordinal=Ordinal.FIFTH, day=calendar.SUNDAY, date=seed_date)
+        for m in month:
+            seed_date = datetime.date(year=2019, month=m, day=1)
+            d2 = get_date_of(ordinal=ordinal.FIFTH, day=calendar.SUNDAY, date=seed_date)
             if d2:
                 d2 = d2.day
-            self.assertEqual(self.fifth_sundays_2019[i - 1], d2)
+            self.assertEqual(self.fifth_sundays_2019[m - 1], d2)
 
     def test_first_sundays_2020(self):
-        for i in range(1, 13):
-            seed_date = datetime.date(year=2020, month=i, day=1)
-            date_of_first_sun = get_date_of(ordinal=Ordinal.FIRST, day=calendar.SUNDAY, date=seed_date)
-            d2 = self.first_sundays_2020[i - 1]
+        for m in month:
+            seed_date = datetime.date(year=2020, month=m, day=1)
+            date_of_first_sun = get_date_of(ordinal=ordinal.FIRST, day=calendar.SUNDAY, date=seed_date)
+            d2 = self.first_sundays_2020[m - 1]
             d1 = date_of_first_sun.day
             self.assertEqual(d1, d2)
 
     def test_second_sundays_2020(self):
-        for i in range(1, 13):
-            seed_date = datetime.date(year=2020, month=i, day=1)
-            date_of_second_sun = get_date_of(ordinal=Ordinal.SECOND, day=calendar.SUNDAY, date=seed_date)
-            d2 = self.second_sundays_2020[i - 1]
+        for m in month:
+            seed_date = datetime.date(year=2020, month=m, day=1)
+            date_of_second_sun = get_date_of(ordinal=ordinal.SECOND, day=calendar.SUNDAY, date=seed_date)
+            d2 = self.second_sundays_2020[m - 1]
             d1 = date_of_second_sun.day
             self.assertEqual(d1, d2)
 
     def test_third_sundays_2020(self):
-        for i in range(1, 13):
-            seed_date = datetime.date(year=2020, month=i, day=1)
-            date_of_third_sun = get_date_of(ordinal=Ordinal.THIRD, day=calendar.SUNDAY, date=seed_date)
-            d2 = self.third_sundays_2020[i - 1]
+        for m in month:
+            seed_date = datetime.date(year=2020, month=m, day=1)
+            date_of_third_sun = get_date_of(ordinal=ordinal.THIRD, day=calendar.SUNDAY, date=seed_date)
+            d2 = self.third_sundays_2020[m - 1]
             d1 = date_of_third_sun.day
             self.assertEqual(d1, d2)
 
     def test_fourth_sundays_2020(self):
-        for i in range(1, 13):
-            seed_date = datetime.date(year=2020, month=i, day=1)
-            date_of_fourth_sun = get_date_of(ordinal=Ordinal.FOURTH, day=calendar.SUNDAY, date=seed_date)
-            d2 = self.fourth_sundays_2020[i - 1]
+        for m in month:
+            seed_date = datetime.date(year=2020, month=m, day=1)
+            date_of_fourth_sun = get_date_of(ordinal=ordinal.FOURTH, day=calendar.SUNDAY, date=seed_date)
+            d2 = self.fourth_sundays_2020[m - 1]
             d1 = date_of_fourth_sun.day
             self.assertEqual(d1, d2)
 
     def test_fifth_sundays_2020(self):
-        for i in range(1, 13):
-            seed_date = datetime.date(year=2020, month=i, day=1)
-            d2 = get_date_of(ordinal=Ordinal.FIFTH, day=calendar.SUNDAY, date=seed_date)
+        for m in month:
+            seed_date = datetime.date(year=2020, month=m, day=1)
+            d2 = get_date_of(ordinal=ordinal.FIFTH, day=calendar.SUNDAY, date=seed_date)
             if d2:
                 d2 = d2.day
-            self.assertEqual(self.fifth_sundays_2020[i - 1], d2)
+            self.assertEqual(self.fifth_sundays_2020[m - 1], d2)
 
     def test_first_sundays_2021(self):
-        for i in range(1, 13):
-            seed_date = datetime.date(year=2021, month=i, day=1)
-            date_of_first_sun = get_date_of(ordinal=Ordinal.FIRST, day=calendar.SUNDAY, date=seed_date)
-            d2 = self.first_sundays_2021[i - 1]
+        for m in month:
+            seed_date = datetime.date(year=2021, month=m, day=1)
+            date_of_first_sun = get_date_of(ordinal=ordinal.FIRST, day=calendar.SUNDAY, date=seed_date)
+            d2 = self.first_sundays_2021[m - 1]
             d1 = date_of_first_sun.day
             self.assertEqual(d1, d2)
 
     def test_second_sundays_2021(self):
-        for i in range(1, 13):
-            seed_date = datetime.date(year=2021, month=i, day=1)
-            date_of_second_sun = get_date_of(ordinal=Ordinal.SECOND, day=calendar.SUNDAY, date=seed_date)
-            d2 = self.second_sundays_2021[i - 1]
+        for m in month:
+            seed_date = datetime.date(year=2021, month=m, day=1)
+            date_of_second_sun = get_date_of(ordinal=ordinal.SECOND, day=calendar.SUNDAY, date=seed_date)
+            d2 = self.second_sundays_2021[m - 1]
             d1 = date_of_second_sun.day
             self.assertEqual(d1, d2)
 
     def test_third_sundays_2021(self):
-        for i in range(1, 13):
-            seed_date = datetime.date(year=2021, month=i, day=1)
-            date_of_third_sun = get_date_of(ordinal=Ordinal.THIRD, day=calendar.SUNDAY, date=seed_date)
-            d2 = self.third_sundays_2021[i - 1]
+        for m in month:
+            seed_date = datetime.date(year=2021, month=m, day=1)
+            date_of_third_sun = get_date_of(ordinal=ordinal.THIRD, day=calendar.SUNDAY, date=seed_date)
+            d2 = self.third_sundays_2021[m - 1]
             d1 = date_of_third_sun.day
             self.assertEqual(d1, d2)
 
     def test_fourth_sundays_2021(self):
-        for i in range(1, 13):
-            seed_date = datetime.date(year=2021, month=i, day=1)
-            date_of_fourth_sun = get_date_of(ordinal=Ordinal.FOURTH, day=calendar.SUNDAY, date=seed_date)
-            d2 = self.fourth_sundays_2021[i - 1]
+        for m in month:
+            seed_date = datetime.date(year=2021, month=m, day=1)
+            date_of_fourth_sun = get_date_of(ordinal=ordinal.FOURTH, day=calendar.SUNDAY, date=seed_date)
+            d2 = self.fourth_sundays_2021[m - 1]
             d1 = date_of_fourth_sun.day
             self.assertEqual(d1, d2)
 
     def test_fifth_sundays_2021(self):
-        for i in range(1, 13):
-            seed_date = datetime.date(year=2021, month=i, day=1)
-            d2 = get_date_of(ordinal=Ordinal.FIFTH, day=calendar.SUNDAY, date=seed_date)
+        for m in month:
+            seed_date = datetime.date(year=2021, month=m, day=1)
+            d2 = get_date_of(ordinal=ordinal.FIFTH, day=calendar.SUNDAY, date=seed_date)
             if d2:
                 d2 = d2.day
-            self.assertEqual(self.fifth_sundays_2021[i - 1], d2)
+            self.assertEqual(self.fifth_sundays_2021[m - 1], d2)
 
     def test_first_sundays_2022(self):
-        for i in range(1, 13):
-            seed_date = datetime.date(year=2022, month=i, day=1)
-            date_of_first_sun = get_date_of(ordinal=Ordinal.FIRST, day=calendar.SUNDAY, date=seed_date)
-            d2 = self.first_sundays_2022[i - 1]
+        for m in month:
+            seed_date = datetime.date(year=2022, month=m, day=1)
+            date_of_first_sun = get_date_of(ordinal=ordinal.FIRST, day=calendar.SUNDAY, date=seed_date)
+            d2 = self.first_sundays_2022[m - 1]
             d1 = date_of_first_sun.day
             self.assertEqual(d1, d2)
 
     def test_second_sundays_2022(self):
-        for i in range(1, 13):
-            seed_date = datetime.date(year=2022, month=i, day=1)
-            date_of_second_sun = get_date_of(ordinal=Ordinal.SECOND, day=calendar.SUNDAY, date=seed_date)
-            d2 = self.second_sundays_2022[i - 1]
+        for m in month:
+            seed_date = datetime.date(year=2022, month=m, day=1)
+            date_of_second_sun = get_date_of(ordinal=ordinal.SECOND, day=calendar.SUNDAY, date=seed_date)
+            d2 = self.second_sundays_2022[m - 1]
             d1 = date_of_second_sun.day
             self.assertEqual(d1, d2)
 
     def test_third_sundays_2022(self):
-        for i in range(1, 13):
-            seed_date = datetime.date(year=2022, month=i, day=1)
-            date_of_third_sun = get_date_of(ordinal=Ordinal.THIRD, day=calendar.SUNDAY, date=seed_date)
-            d2 = self.third_sundays_2022[i - 1]
+        for m in month:
+            seed_date = datetime.date(year=2022, month=m, day=1)
+            date_of_third_sun = get_date_of(ordinal=ordinal.THIRD, day=calendar.SUNDAY, date=seed_date)
+            d2 = self.third_sundays_2022[m - 1]
             d1 = date_of_third_sun.day
             self.assertEqual(d1, d2)
 
     def test_fourth_sundays_2022(self):
-        for i in range(1, 13):
-            seed_date = datetime.date(year=2022, month=i, day=1)
-            date_of_fourth_sun = get_date_of(ordinal=Ordinal.FOURTH, day=calendar.SUNDAY, date=seed_date)
-            d2 = self.fourth_sundays_2022[i - 1]
+        for m in month:
+            seed_date = datetime.date(year=2022, month=m, day=1)
+            date_of_fourth_sun = get_date_of(ordinal=ordinal.FOURTH, day=calendar.SUNDAY, date=seed_date)
+            d2 = self.fourth_sundays_2022[m - 1]
             d1 = date_of_fourth_sun.day
             self.assertEqual(d1, d2)
 
     def test_fifth_sundays_2022(self):
-        for i in range(1, 13):
-            seed_date = datetime.date(year=2022, month=i, day=1)
-            d2 = self.fifth_sundays_2022[i - 1]
-            d1 = get_date_of(ordinal=Ordinal.FIFTH, day=calendar.SUNDAY, date=seed_date)
+        for m in month:
+            seed_date = datetime.date(year=2022, month=m, day=1)
+            d2 = self.fifth_sundays_2022[m - 1]
+            d1 = get_date_of(ordinal=ordinal.FIFTH, day=calendar.SUNDAY, date=seed_date)
             if d1:
                 d1 = d1.day
             self.assertEqual(d1, d2)
