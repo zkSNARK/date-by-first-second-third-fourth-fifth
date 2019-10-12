@@ -3,29 +3,49 @@ import datetime
 
 from typing import Optional
 
-from src.Ordinal import Ordinal
+from src.ordinal import Ordinal
 
 
-def get_next_date_offset(day=calendar.MONDAY, date=datetime.datetime.now(), ordinal=Ordinal.FIRST) -> Optional[datetime.date]:
+def get_date_of(ordinal=Ordinal.FIRST,
+                day=calendar.MONDAY,
+                date=None,
+                month=None,
+                year=None) -> Optional[datetime.date]:
     """Get the date of a day of the week specified by an ordinal value (or int).
 
-    Expects monday to be set to default calendar.MONDAY == 0
+    As an example, you can read the API of this utility as follows.
 
-    :param day: The calendar day from library calendar enum.
+    get_date_of ( the first monday in January of 2021)
+
+    Expects monday to be set to the calendar library default firstweekday == 0.
+    Check your first day by calling calendar.firstweekday().  See...
+        https://docs.python.org/3/library/calendar.html#calendar.firstweekday
+
+
+    :param ordinal: This is the ordinal ordering, pass one of the ordinals from
+        the Ordinal enum found in ordinal.py
+    :param day: The calendar day from calendar library.
     :param date: The date or datetime which is in the month you want to target.
         Any date in a particular month will work here.
-    :param ordinal: This is the ordinal ordering, pass one of the ordinals from
-        the enum provided above.
-    :return: date or None
+        NOTE: you should either pass this, or you should pass the two following
+              parameters (month, year)
+    :param month: if you didn't pass the date, pass the month as an int
+    :param year: if you didn't pass the date, pass the month as an int
+
+
+    :return: date or None if the request doesn't exist in the given month / year
     """
 
+    if month and year:
+        date = datetime.date(year=year, month=month, day=1)
+
     month_range = calendar.monthrange(date.year, date.month)
-    date_corrected = datetime.date(date.year, date.month, 1)
+    first_of_month = datetime.date(date.year, date.month, 1)
     month_range0 = month_range[0]
     offset = (day - month_range0)
     delta = (offset % 7) + (7 * (ordinal - 1))
 
-    new_date = date_corrected + datetime.timedelta(days=delta)
+    new_date = first_of_month + datetime.timedelta(days=delta)
     if date.month == new_date.month:
         return new_date
     else:

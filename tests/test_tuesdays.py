@@ -2,7 +2,7 @@ import calendar
 import datetime
 from unittest import TestCase
 
-from src.date_util import get_next_date_offset, Ordinal
+from src.date_util import get_date_of, Ordinal
 
 
 class GetTuesdayDateOffset(TestCase):
@@ -33,39 +33,39 @@ class GetTuesdayDateOffset(TestCase):
     def test_first_tuesdays_2019(self):
         for i in range(1, 13):
             seed_date = datetime.date(year=2019, month=i, day=1)
-            date_of_first_mon = get_next_date_offset(day=calendar.TUESDAY, date=seed_date, ordinal=Ordinal.FIRST)
+            date_of_second_tues = get_date_of(ordinal=Ordinal.FIRST, day=calendar.TUESDAY, date=seed_date)
             d2 = self.first_tuesdays_2019[i - 1]
-            d1 = date_of_first_mon.day
+            d1 = date_of_second_tues.day
             self.assertEqual(d1, d2)
 
     def test_second_tuesdays_2019(self):
         for i in range(1, 13):
             seed_date = datetime.date(year=2019, month=i, day=1)
-            date_of_second_mon = get_next_date_offset(day=calendar.TUESDAY, date=seed_date, ordinal=Ordinal.SECOND)
+            date_of_second_tues = get_date_of(ordinal=Ordinal.SECOND, day=calendar.TUESDAY, date=seed_date)
             d2 = self.second_tuesdays_2019[i - 1]
-            d1 = date_of_second_mon.day
+            d1 = date_of_second_tues.day
             self.assertEqual(d1, d2)
 
     def test_third_tuesdays_2019(self):
         for i in range(1, 13):
             seed_date = datetime.date(year=2019, month=i, day=1)
-            date_of_third_mon = get_next_date_offset(day=calendar.TUESDAY, date=seed_date, ordinal=Ordinal.THIRD)
+            date_of_third_tues = get_date_of(ordinal=Ordinal.THIRD, day=calendar.TUESDAY, date=seed_date)
             d2 = self.third_tuesdays_2019[i - 1]
-            d1 = date_of_third_mon.day
+            d1 = date_of_third_tues.day
             self.assertEqual(d1, d2)
 
     def test_fourth_tuesdays_2019(self):
         for i in range(1, 13):
             seed_date = datetime.date(year=2019, month=i, day=1)
-            date_of_fourth_mon = get_next_date_offset(day=calendar.TUESDAY, date=seed_date, ordinal=Ordinal.FOURTH)
+            date_of_fourth_tues = get_date_of(ordinal=Ordinal.FOURTH, day=calendar.TUESDAY, date=seed_date)
             d2 = self.fourth_tuesdays_2019[i - 1]
-            d1 = date_of_fourth_mon.day
+            d1 = date_of_fourth_tues.day
             self.assertEqual(d1, d2)
 
     def test_fifth_tuesdays_2019(self):
         for i in range(1, 13):
             seed_date = datetime.date(year=2019, month=i, day=1)
-            d2 = get_next_date_offset(day=calendar.TUESDAY, date=seed_date, ordinal=Ordinal.FIFTH)
+            d2 = get_date_of(ordinal=Ordinal.FIFTH, day=calendar.TUESDAY, date=seed_date)
             if d2:
                 d2 = d2.day
             self.assertEqual(self.fifth_tuesdays_2019[i - 1], d2)
@@ -73,39 +73,39 @@ class GetTuesdayDateOffset(TestCase):
     def test_first_tuesdays_2020(self):
         for i in range(1, 13):
             seed_date = datetime.date(year=2020, month=i, day=1)
-            date_of_first_mon = get_next_date_offset(day=calendar.TUESDAY, date=seed_date, ordinal=Ordinal.FIRST)
+            date_of_second_tues = get_date_of(ordinal=Ordinal.FIRST, day=calendar.TUESDAY, date=seed_date)
             d2 = self.first_tuesdays_2020[i - 1]
-            d1 = date_of_first_mon.day
+            d1 = date_of_second_tues.day
             self.assertEqual(d1, d2)
 
     def test_second_tuesdays_2020(self):
         for i in range(1, 13):
             seed_date = datetime.date(year=2020, month=i, day=1)
-            date_of_second_mon = get_next_date_offset(day=calendar.TUESDAY, date=seed_date, ordinal=Ordinal.SECOND)
+            date_of_second_tues = get_date_of(ordinal=Ordinal.SECOND, day=calendar.TUESDAY, date=seed_date)
             d2 = self.second_tuesdays_2020[i - 1]
-            d1 = date_of_second_mon.day
+            d1 = date_of_second_tues.day
             self.assertEqual(d1, d2)
 
     def test_third_tuesdays_2020(self):
         for i in range(1, 13):
             seed_date = datetime.date(year=2020, month=i, day=1)
-            date_of_third_mon = get_next_date_offset(day=calendar.TUESDAY, date=seed_date, ordinal=Ordinal.THIRD)
+            date_of_third_tues = get_date_of(ordinal=Ordinal.THIRD, day=calendar.TUESDAY, date=seed_date)
             d2 = self.third_tuesdays_2020[i - 1]
-            d1 = date_of_third_mon.day
+            d1 = date_of_third_tues.day
             self.assertEqual(d1, d2)
 
     def test_fourth_tuesdays_2020(self):
         for i in range(1, 13):
             seed_date = datetime.date(year=2020, month=i, day=1)
-            date_of_fourth_mon = get_next_date_offset(day=calendar.TUESDAY, date=seed_date, ordinal=Ordinal.FOURTH)
+            date_of_fourth_tues = get_date_of(ordinal=Ordinal.FOURTH, day=calendar.TUESDAY, date=seed_date)
             d2 = self.fourth_tuesdays_2020[i - 1]
-            d1 = date_of_fourth_mon.day
+            d1 = date_of_fourth_tues.day
             self.assertEqual(d1, d2)
 
     def test_fifth_tuesdays_2020(self):
         for i in range(1, 13):
             seed_date = datetime.date(year=2020, month=i, day=1)
-            d2 = get_next_date_offset(day=calendar.TUESDAY, date=seed_date, ordinal=Ordinal.FIFTH)
+            d2 = get_date_of(ordinal=Ordinal.FIFTH, day=calendar.TUESDAY, date=seed_date)
             if d2:
                 d2 = d2.day
             self.assertEqual(self.fifth_tuesdays_2020[i - 1], d2)
@@ -113,39 +113,39 @@ class GetTuesdayDateOffset(TestCase):
     def test_first_tuesdays_2021(self):
         for i in range(1, 13):
             seed_date = datetime.date(year=2021, month=i, day=1)
-            date_of_first_mon = get_next_date_offset(day=calendar.TUESDAY, date=seed_date, ordinal=Ordinal.FIRST)
+            date_of_second_tues = get_date_of(ordinal=Ordinal.FIRST, day=calendar.TUESDAY, date=seed_date)
             d2 = self.first_tuesdays_2021[i - 1]
-            d1 = date_of_first_mon.day
+            d1 = date_of_second_tues.day
             self.assertEqual(d1, d2)
 
     def test_second_tuesdays_2021(self):
         for i in range(1, 13):
             seed_date = datetime.date(year=2021, month=i, day=1)
-            date_of_second_mon = get_next_date_offset(day=calendar.TUESDAY, date=seed_date, ordinal=Ordinal.SECOND)
+            date_of_second_tues = get_date_of(ordinal=Ordinal.SECOND, day=calendar.TUESDAY, date=seed_date)
             d2 = self.second_tuesdays_2021[i - 1]
-            d1 = date_of_second_mon.day
+            d1 = date_of_second_tues.day
             self.assertEqual(d1, d2)
 
     def test_third_tuesdays_2021(self):
         for i in range(1, 13):
             seed_date = datetime.date(year=2021, month=i, day=1)
-            date_of_third_mon = get_next_date_offset(day=calendar.TUESDAY, date=seed_date, ordinal=Ordinal.THIRD)
+            date_of_third_tues = get_date_of(ordinal=Ordinal.THIRD, day=calendar.TUESDAY, date=seed_date)
             d2 = self.third_tuesdays_2021[i - 1]
-            d1 = date_of_third_mon.day
+            d1 = date_of_third_tues.day
             self.assertEqual(d1, d2)
 
     def test_fourth_tuesdays_2021(self):
         for i in range(1, 13):
             seed_date = datetime.date(year=2021, month=i, day=1)
-            date_of_fourth_mon = get_next_date_offset(day=calendar.TUESDAY, date=seed_date, ordinal=Ordinal.FOURTH)
+            date_of_fourth_tues = get_date_of(ordinal=Ordinal.FOURTH, day=calendar.TUESDAY, date=seed_date)
             d2 = self.fourth_tuesdays_2021[i - 1]
-            d1 = date_of_fourth_mon.day
+            d1 = date_of_fourth_tues.day
             self.assertEqual(d1, d2)
 
     def test_fifth_tuesdays_2021(self):
         for i in range(1, 13):
             seed_date = datetime.date(year=2021, month=i, day=1)
-            d2 = get_next_date_offset(day=calendar.TUESDAY, date=seed_date, ordinal=Ordinal.FIFTH)
+            d2 = get_date_of(ordinal=Ordinal.FIFTH, day=calendar.TUESDAY, date=seed_date)
             if d2:
                 d2 = d2.day
             self.assertEqual(self.fifth_tuesdays_2021[i - 1], d2)
@@ -153,40 +153,40 @@ class GetTuesdayDateOffset(TestCase):
     def test_first_tuesdays_2022(self):
         for i in range(1, 13):
             seed_date = datetime.date(year=2022, month=i, day=1)
-            date_of_first_mon = get_next_date_offset(day=calendar.TUESDAY, date=seed_date, ordinal=Ordinal.FIRST)
+            date_of_first_tues = get_date_of(ordinal=Ordinal.FIRST, day=calendar.TUESDAY, date=seed_date)
             d2 = self.first_tuesdays_2022[i - 1]
-            d1 = date_of_first_mon.day
+            d1 = date_of_first_tues.day
             self.assertEqual(d1, d2)
 
     def test_second_tuesdays_2022(self):
         for i in range(1, 13):
             seed_date = datetime.date(year=2022, month=i, day=1)
-            date_of_second_mon = get_next_date_offset(day=calendar.TUESDAY, date=seed_date, ordinal=Ordinal.SECOND)
+            date_of_second_tues = get_date_of(ordinal=Ordinal.SECOND, day=calendar.TUESDAY, date=seed_date)
             d2 = self.second_tuesdays_2022[i - 1]
-            d1 = date_of_second_mon.day
+            d1 = date_of_second_tues.day
             self.assertEqual(d1, d2)
 
     def test_third_tuesdays_2022(self):
         for i in range(1, 13):
             seed_date = datetime.date(year=2022, month=i, day=1)
-            date_of_third_mon = get_next_date_offset(day=calendar.TUESDAY, date=seed_date, ordinal=Ordinal.THIRD)
+            date_of_third_tues = get_date_of(ordinal=Ordinal.THIRD, day=calendar.TUESDAY, date=seed_date)
             d2 = self.third_tuesdays_2022[i - 1]
-            d1 = date_of_third_mon.day
+            d1 = date_of_third_tues.day
             self.assertEqual(d1, d2)
 
     def test_fourth_tuesdays_2022(self):
         for i in range(1, 13):
             seed_date = datetime.date(year=2022, month=i, day=1)
-            date_of_fourth_mon = get_next_date_offset(day=calendar.TUESDAY, date=seed_date, ordinal=Ordinal.FOURTH)
+            date_of_fourth_tues = get_date_of(ordinal=Ordinal.FOURTH, day=calendar.TUESDAY, date=seed_date)
             d2 = self.fourth_tuesdays_2022[i - 1]
-            d1 = date_of_fourth_mon.day
+            d1 = date_of_fourth_tues.day
             self.assertEqual(d1, d2)
 
     def test_fifth_tuesdays_2022(self):
         for i in range(1, 13):
             seed_date = datetime.date(year=2022, month=i, day=1)
             d2 = self.fifth_tuesdays_2022[i - 1]
-            d1 = get_next_date_offset(day=calendar.TUESDAY, date=seed_date, ordinal=Ordinal.FIFTH)
+            d1 = get_date_of(ordinal=Ordinal.FIFTH, day=calendar.TUESDAY, date=seed_date)
             if d1:
                 d1 = d1.day
             self.assertEqual(d1, d2)
