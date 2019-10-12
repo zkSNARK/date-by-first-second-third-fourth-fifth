@@ -32,7 +32,8 @@ follows...
     >>>>get_date_of(ordinal.FIRST, calendar.MONDAY, month.JANUARY, 2020)
     datetime.date(2020, 1, 6)
 
-##NOTE: 
+
+## NOTE: 
 
 There are 3 parameters in the header that are need to be considered
 with care.
