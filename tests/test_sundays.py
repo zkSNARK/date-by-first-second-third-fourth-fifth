@@ -2,8 +2,7 @@ import calendar
 import datetime
 from unittest import TestCase
 
-from ordinal import ordinal, month
-from src.date_util import get_date_of
+from src.ordinal_date_util import get_date_of, ordinal, month
 
 
 class GetSundayDateOffset(TestCase):
