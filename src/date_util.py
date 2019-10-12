@@ -1,17 +1,9 @@
 import calendar
 import datetime
 
-from enum import unique, IntEnum
 from typing import Optional
 
-
-@unique
-class Ordinal(IntEnum):
-    FIRST = 0
-    SECOND = 1
-    THIRD = 2
-    FOURTH = 3
-    FIFTH = 4
+from src.Ordinal import Ordinal
 
 
 def get_next_date_offset(day=calendar.MONDAY, date=datetime.datetime.now(), ordinal=Ordinal.FIRST) -> Optional[datetime.date]:
@@ -31,7 +23,7 @@ def get_next_date_offset(day=calendar.MONDAY, date=datetime.datetime.now(), ordi
     date_corrected = datetime.date(date.year, date.month, 1)
     month_range0 = month_range[0]
     offset = (day - month_range0)
-    delta = (offset % 7) + (7 * ordinal)
+    delta = (offset % 7) + (7 * (ordinal - 1))
 
     new_date = date_corrected + datetime.timedelta(days=delta)
     if date.month == new_date.month:

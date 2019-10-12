@@ -2,7 +2,7 @@ import calendar
 import datetime
 from unittest import TestCase
 
-from date_util import get_next_date_offset, Ordinal
+from src.date_util import get_next_date_offset, Ordinal
 
 
 class GetMondayDateOffset(TestCase):
