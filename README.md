@@ -13,7 +13,7 @@ Relating this back to the example sentence we wrote above, we can
 read the function as...
     
     get the date of (*ordinal* *day* in *month* of *year*)
-        
+
 This returns either the date you asked for, or None if that request
 can't be found during a given month.  For example, a request for the
 seventh Monday in January, 2020 would return a None object because 
